@@ -1,0 +1,370 @@
+/* App.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* TOP BAR */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f2d3;
+  color: #0f5132;
+  padding: 0 2rem;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+
+  position: sticky;
+  top: 0;
+  height: 48px;
+  line-height: 48px;
+  z-index: 3;
+}
+
+.top-bar a {
+  display: inline-flex;
+  align-items: center;
+  color: #0f5132;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.top-bar a:hover {
+  color: #198754;
+}
+
+.top-bar a img {
+  height: 16px;
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.top-bar-left,
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.top-bar-right a {
+  margin-left: 0.5rem;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  color: #0f5132;
+  padding: 10px 20px;
+  position: sticky;
+  top: 48px; /* below top-bar */
+  height: 64px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.logo {
+  height: 30px;
+  width: auto;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #0f5132;
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  padding-bottom: 5px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #198754; /* green hover color */
+}
+
+.nav-link.active {
+  color: #198754;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #198754;
+  border-radius: 2px;
+}
+
+/* SUB BAR */
+.sub-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 2rem;
+  height: 48px;
+  line-height: 48px;
+  background-color: #0f5132;
+  color: #fff;
+  font-weight: bold;
+  overflow: visible;
+
+  position: sticky;
+  top: 112px; /* 48 + 64 = 112 */
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+  z-index: 20;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 10px;
+  display: none;
+  min-width: 180px;
+  z-index: 999;
+}
+
+.dropdown-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-menu {
+  margin-top: 2px;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: auto;
+  top: 100%;
+  background-color: #fff;
+  color: #0f5132;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu, .dropdown-menu:hover {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #0f5132;
+  transition: background-color 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f7f2d3;
+}
+
+/* HERO SLIDER */
+.hero-slider {
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: grab;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  color: white;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+  max-width: 50%;
+}
+
+.slide-content h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.slide-content p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.loan-app-link {
+  margin-left: 20px;
+  font-weight: bold;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+/* Cards */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.card {
+  background: white;
+  border: 1px solid #0f5132;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+  font-size: 40px;
+  color: #2c7a7b;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Footer */
+
+.footer {
+  background-color: #004225;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Loan Info Page */
+.loan-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: 70vh;
+  background: url("./images/CvSU-Front.jpg") no-repeat center center/cover;
+  position: relative;
+}
+
+.loan-info-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(5px);
+}
+
+.loan-card {
+  position: relative;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  z-index: 1;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.loan-icon {
+  font-size: 60px;
+  color: #0f5132;
+  margin-bottom: 15px;
+}
+
+.loan-card h1 {
+  font-size: 28px;
+  color: #0f5132;
+  margin-bottom: 15px;
+}
+
+.loan-card p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

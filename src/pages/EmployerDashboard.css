@@ -1,0 +1,143 @@
+/* EmployerDashboard.css */
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #0f5132;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.sidebar-header {
+  text-align: center;
+}
+.sidebar-logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar nav ul li {
+  padding: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s;
+}
+.sidebar nav ul li:hover {
+  background: #145a3d;
+}
+.logout {
+  background: none;
+  border: none;
+  color: #fff;
+  margin: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  background: #f4f6f9;
+  padding: 20px;
+  overflow-y: auto;
+}
+.topbar {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.card h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #0f5132;
+}
+.card p {
+  color: #555;
+}
+
+
+/* Members Tab */
+.members-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.members-table th,
+.members-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.members-table th {
+  background-color: #0f5132;
+  text-align: left;
+  color: white;
+}
+
+.members-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.members-table tr:hover {
+  background-color: #eaeaea;
+}
+
+.loans-table, .payments-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.loans-table th, .loans-table td,
+.payments-table th, .payments-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.loans-table th, .payments-table th {
+  background-color: #0f5132;
+  text-align: left;
+  color: #ddd;
+}
+
+.loans-table tr:nth-child(even),
+.payments-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.loans-table tr:hover,
+.payments-table tr:hover {
+  background-color: #eaeaea;
+}
